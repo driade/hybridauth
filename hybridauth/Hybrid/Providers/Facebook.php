@@ -396,7 +396,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
     function getUserPhoto($id) {
         $photo_size = isset($this->config['photo_size']) ? $this->config['photo_size'] : 150;
 
-        return "https://graph.facebook.com/{$id}/picture?width={$photo_size}&height={$photo_size}";
+        return "https://graph.facebook.com/{$id}/picture?width={$photo_size}&height={$photo_size}&access_token=" . $this->token('access_token');
     }
 
 }
